@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 		borderRadius: 5,
 		flexDirection: 'row',
 		height: 50,
-		margin: 15,
+		marginVertical: 15,
 		paddingHorizontal: 10,
 	},
 	search: {

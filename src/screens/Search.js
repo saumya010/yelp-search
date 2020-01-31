@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 import SearchBar from '../Components/SearchBar';
 import ResultsList from '../Components/ResultsList';
@@ -10,8 +10,14 @@ const Search = () => {
 	const [searchTerm, updateSearch] = useState('');
 	const [searchApi, results, errorMsg] = useResults();
 
+	const filterResultsPrice = (price) => {
+		return results.filter(result => {
+			return result.price === price
+		})
+	}
+
 	return(
-		<View>
+		<View style={styles.result}>
 			{ errorMsg ? <Text>{errorMsg}</Text> : null }
 			<SearchBar
 				searchTerm={searchTerm}
@@ -21,18 +27,24 @@ const Search = () => {
 			<Text>Found {results.length} results</Text>
 			<ResultsList
 				title="Cost effective"
-				results
+				results = {filterResultsPrice('$')}
 			/>
 			<ResultsList
 				title="Pricier"
-				results
+				results = {filterResultsPrice('$$')}
 			/>
 			<ResultsList
 				title="Fancy"
-				results
+				results = {filterResultsPrice('$$$')}
 			/>
 		</View>
 	)
 }
+
+const styles = StyleSheet.create({
+	result: {
+		marginHorizontal: 15,
+	}
+})
 
 export default Search;
