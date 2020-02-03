@@ -22,7 +22,3 @@ const navigator = createStackNavigator(
 const App = createAppContainer(navigator);
 
 export default App;
-
-// Client ID
-// 3bC-hP51vy_y_JvwXRQEXQ
-//
