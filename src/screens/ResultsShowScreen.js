@@ -52,6 +52,9 @@ const styles = StyleSheet.create({
 		fontSize: 24,
 		marginLeft: 10,
 	},
+	resultDetail: {
+		marginRight: 10,
+	},
 	resultImage: {
 		height: 200,
 		marginLeft: 10,
