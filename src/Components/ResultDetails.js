@@ -14,7 +14,7 @@ const ResultDetails = ({result}) => {
 
 const styles = StyleSheet.create({
 	resultView: {
-		marginRight: 10,
+		marginLeft: 10,
 	},
 	resultImage: {
 		height: 100,

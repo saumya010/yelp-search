@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		height: 50,
 		marginVertical: 15,
+		marginHorizontal: 10,
 		paddingHorizontal: 10,
 	},
 	search: {

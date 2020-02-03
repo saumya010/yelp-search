@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
 import SearchBar from '../Components/SearchBar';
 import ResultsList from '../Components/ResultsList';
@@ -24,26 +24,28 @@ const Search = () => {
 				onTermChange={updateSearch}
 				onTermSubmit = {() => searchApi(searchTerm)}
 			/>
-			<Text>Found {results.length} results</Text>
-			<ResultsList
-				title="Cost effective"
-				results = {filterResultsPrice('$')}
-			/>
-			<ResultsList
-				title="Pricier"
-				results = {filterResultsPrice('$$')}
-			/>
-			<ResultsList
-				title="Fancy"
-				results = {filterResultsPrice('$$$')}
-			/>
+			<Text style={{marginLeft: 10}}>Found {results.length} results</Text>
+			<ScrollView>
+				<ResultsList
+					title="Cost effective"
+					results = {filterResultsPrice('$')}
+				/>
+				<ResultsList
+					title="Pricier"
+					results = {filterResultsPrice('$$')}
+				/>
+				<ResultsList
+					title="Fancy"
+					results = {filterResultsPrice('$$$')}
+				/>
+			</ScrollView>
 		</View>
 	)
 }
 
 const styles = StyleSheet.create({
 	result: {
-		marginHorizontal: 15,
+		flex: 1,
 	}
 })
 
